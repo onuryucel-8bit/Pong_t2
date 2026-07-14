@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://bynobexfc0f0l"]
+
+[ext_resource type="Script" uid="uid://di8gpmsxnivgn" path="res://scripts/Wall.cs" id="1_nviqj"]
+[ext_resource type="AudioStream" uid="uid://dgsjj1u074kcb" path="res://Assets/audio/fah2.ogg" id="2_ahuin"]
+[ext_resource type="PackedScene" uid="uid://bx3ss8i8821iy" path="res://scenes/Entity/player.tscn" id="3_au73c"]
+[ext_resource type="PackedScene" uid="uid://de78u6sepvyir" path="res://scenes/Entity/ball.tscn" id="4_muy52"]
+[ext_resource type="Script" uid="uid://dna0m5521daqp" path="res://scripts/Ball.cs" id="5_l4npc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3qbl"]
+size = Vector2(1152, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o26pp"]
+size = Vector2(18, 648)
+
+[node name="Node2D" type="Node2D" unique_id=159930364]
+
+[node name="up" type="StaticBody2D" parent="." unique_id=1029653891]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="up" unique_id=1462501240]
+position = Vector2(576, -8)
+shape = SubResource("RectangleShape2D_v3qbl")
+
+[node name="bottom" type="StaticBody2D" parent="." unique_id=1637743812]
+position = Vector2(0, 669)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottom" unique_id=1451848088]
+position = Vector2(576, -13)
+shape = SubResource("RectangleShape2D_v3qbl")
+
+[node name="left" type="Area2D" parent="." unique_id=1944113815 node_paths=PackedStringArray("ScoreLabel", "GameBall")]
+script = ExtResource("1_nviqj")
+ScoreLabel = NodePath("../CanvasLayer/p2Score")
+GameBall = NodePath("../ball")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left" unique_id=1932197638]
+position = Vector2(-9, 324)
+shape = SubResource("RectangleShape2D_o26pp")
+
+[node name="sfx" type="AudioStreamPlayer" parent="left" unique_id=1824233239]
+stream = ExtResource("2_ahuin")
+
+[node name="right" type="Area2D" parent="." unique_id=667790423 node_paths=PackedStringArray("ScoreLabel", "GameBall")]
+script = ExtResource("1_nviqj")
+ScoreLabel = NodePath("../CanvasLayer/p1Score")
+GameBall = NodePath("../ball")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right" unique_id=1847882337]
+position = Vector2(1160, 324)
+shape = SubResource("RectangleShape2D_o26pp")
+
+[node name="sfx" type="AudioStreamPlayer" parent="right" unique_id=607672402]
+stream = ExtResource("2_ahuin")
+
+[node name="player" parent="." unique_id=727949591 node_paths=PackedStringArray("GameBall") instance=ExtResource("3_au73c")]
+position = Vector2(32, 240)
+GameBall = NodePath("../ball")
+
+[node name="ball" parent="." unique_id=716691919 instance=ExtResource("4_muy52")]
+position = Vector2(464, 264)
+script = ExtResource("5_l4npc")
+Speed = 200.0
+
+[node name="player2" parent="." unique_id=1397254012 node_paths=PackedStringArray("GameBall") instance=ExtResource("3_au73c")]
+position = Vector2(1040, 240)
+ActionUp = &"p2_up"
+ActionDown = &"p2_down"
+GameBall = NodePath("../ball")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1812651277]
+
+[node name="p1Score" type="Label" parent="CanvasLayer" unique_id=1648015519]
+offset_left = 256.0
+offset_top = 64.0
+offset_right = 296.0
+offset_bottom = 87.0
+text = "0"
+
+[node name="p2Score" type="Label" parent="CanvasLayer" unique_id=712335629]
+offset_left = 832.0
+offset_top = 64.0
+offset_right = 872.0
+offset_bottom = 87.0
+text = "0"

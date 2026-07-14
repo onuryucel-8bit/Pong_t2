@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bwhk3lnerv7y5"]
+
+[ext_resource type="Script" uid="uid://c4gk8tlirv11j" path="res://scripts/StartButton.cs" id="1_1515e"]
+
+[node name="Main" type="Node2D" unique_id=207212086]
+
+[node name="StartButton" type="Button" parent="." unique_id=628739846]
+offset_left = 384.0
+offset_top = 64.0
+offset_right = 704.0
+offset_bottom = 192.0
+text = "Start"
+script = ExtResource("1_1515e")
+TargetScenePath = "uid://bynobexfc0f0l"
+
+[node name="ExitButton" type="Button" parent="." unique_id=849672478]
+offset_left = 384.0
+offset_top = 256.0
+offset_right = 704.0
+offset_bottom = 384.0
+text = "Exit"
+script = ExtResource("1_1515e")
+Behavior = 1

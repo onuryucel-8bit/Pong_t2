@@ -1,8 +1,14 @@
 # Godot 4+ specific ignores
-.godot/
+.godot/*
 /android/
 
-.vs/
+.vs/*
+data_Pong_windows_x86_64/*
+Properties/*
+
+Assets/audio/*.mp3.import
+Assets/audio/*.wav.import
+Assets/audio/*.ogg.import
 
 *.exe
 *.godot
