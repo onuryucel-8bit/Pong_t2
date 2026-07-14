@@ -2,7 +2,16 @@
 .godot/
 /android/
 
+.vs/
+
 *.exe
 *.godot
 *.sln
 *.pck
+*.csproj
+*.csproj.user
+*.cfg
+*.editorconfig
+*.gitattributes
+
+scripts/*.cs.uid
