@@ -6,9 +6,8 @@
 data_Pong_windows_x86_64/*
 Properties/*
 
-Assets/audio/*.mp3.import
-Assets/audio/*.wav.import
-Assets/audio/*.ogg.import
+
+Assets/audio/*
 
 *.exe
 *.godot
