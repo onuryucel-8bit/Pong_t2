@@ -21,21 +21,13 @@ public partial class Wall : Area2D
     {
 
         if (body.Name == "ball")
-        {
-            GD.Print(Name + ": Gol oldu!"); 
-
+        {            
             _score++;
-
-            //if (ScoreLabel != null)
-            {
-                ScoreLabel.Text = _score.ToString();
-            }
             
-            //if (GameBall != null)
-            {
-                GameBall.reset();
-            }
-
+            ScoreLabel.Text = _score.ToString();
+  
+            GameBall.reset();
+            
             sfx.Play();
         }
     }

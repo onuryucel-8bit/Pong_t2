@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://de78u6sepvyir"]
 
-[ext_resource type="AudioStream" uid="uid://dqeqolms4dslq" path="res://Assets/audio/bonk1.wav" id="1_x8fbi"]
+[ext_resource type="AudioStream" uid="uid://du580m6huse7s" path="res://Assets/audio/hit0.wav" id="1_2oi57"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41u45"]
 size = Vector2(48, 56)
@@ -17,4 +17,4 @@ offset_bottom = 56.0
 color = Color(0.504562, 0.26618543, 2.8878452e-07, 1)
 
 [node name="sfx" type="AudioStreamPlayer" parent="." unique_id=1734026896]
-stream = ExtResource("1_x8fbi")
+stream = ExtResource("1_2oi57")

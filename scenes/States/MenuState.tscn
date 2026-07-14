@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bwhk3lnerv7y5"]
 
 [ext_resource type="Script" uid="uid://c4gk8tlirv11j" path="res://scripts/StartButton.cs" id="1_1515e"]
+[ext_resource type="AudioStream" uid="uid://c3a3owdyr2ry0" path="res://Assets/audio/clik.wav" id="2_6co7v"]
 
 [node name="Main" type="Node2D" unique_id=207212086]
 
@@ -12,6 +13,9 @@ offset_bottom = 192.0
 text = "Start"
 script = ExtResource("1_1515e")
 TargetScenePath = "uid://bynobexfc0f0l"
+
+[node name="sfx" type="AudioStreamPlayer" parent="StartButton" unique_id=241911946]
+stream = ExtResource("2_6co7v")
 
 [node name="ExitButton" type="Button" parent="." unique_id=849672478]
 offset_left = 384.0
